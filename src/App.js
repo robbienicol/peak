@@ -69,14 +69,6 @@ function App() {
   return (
     <div className="App">
       <h1>Grocery & Shopping List</h1>
-      <GroceryList
-        listData={listData}
-        addItem={addItem}
-        favoriteItem={favoriteItem}
-        delItem={delItem}
-        AddGroceryItem={AddGroceryItem}
-        Ref={Ref}
-      />
       <div className="shopping">
         <h2 style={{ color: "green" }}>Shopping List</h2>
         <ShoppingList
@@ -87,6 +79,14 @@ function App() {
           favoriteItem={favoriteItem}
         />
       </div>
+      <GroceryList
+        listData={listData}
+        addItem={addItem}
+        favoriteItem={favoriteItem}
+        delItem={delItem}
+        AddGroceryItem={AddGroceryItem}
+        Ref={Ref}
+      />
     </div>
   );
 }

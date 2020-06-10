@@ -27,8 +27,23 @@
   height: 15px;
 }
 .boarder {
+  left: -250px;
+
+  float: left;
+  position: relative;
   border-style: solid;
   border-color: red;
+  width: 20%;
+}
+.shopping {
+  float: left;
+
+  position: relative;
+  border-style: solid;
+  border-color: greenyellow;
+
+  top: 10;
+  left: 600px;
   width: 20%;
 }
 .favorited {
@@ -42,15 +57,7 @@
   width: 35px;
   height: 15px;
 }
-.shopping {
-  position: relative;
-  border-style: solid;
-  border-color: greenyellow;
 
-  top: -400px;
-  left: 600px;
-  width: 20%;
-}
 .sugar {
   font-size: 1px;
 }
