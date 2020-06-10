@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import initialData from "./Data";
 import "./App.css";
 import GroceryList from "../src/components/GroceryList";
@@ -6,6 +6,8 @@ import ShoppingList from "./components/ShoppingList";
 
 function App() {
   const [listData, setListData] = useState(initialData);
+  const Ref = useRef("");
+
   // flips selected boolean to true on plus-icon button click
   function addItem(id) {
     const updateItems = listData.map((item) =>
@@ -44,14 +46,36 @@ function App() {
     );
     setListData(updateDecrement);
   }
+  // gives ability to add new Grocery Item, by adding a New Object to the array.
+  function AddGroceryItem(id) {
+    const add = Ref.current.value;
+    setListData([
+      ...listData,
+      {
+        id: listData.length + 1,
+        name: add,
+        favorite: false,
+        quantity: 0,
+        nutrition: [
+          {
+            sugars: "?",
+          },
+        ],
+        selected: false,
+      },
+    ]);
+  }
 
   return (
     <div className="App">
       <h1>Grocery & Shopping List</h1>
       <GroceryList
+        listData={listData}
         addItem={addItem}
         favoriteItem={favoriteItem}
         delItem={delItem}
+        AddGroceryItem={AddGroceryItem}
+        Ref={Ref}
       />
       <div className="shopping">
         <h2 style={{ color: "green" }}>Shopping List</h2>

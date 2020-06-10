@@ -51,7 +51,9 @@
   left: 600px;
   width: 20%;
 }
-
+.sugar {
+  font-size: 1px;
+}
 .line {
   position: relative;
   top: 9px;

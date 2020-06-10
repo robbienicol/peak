@@ -1,8 +1,16 @@
 import React from "react";
-import initialData from "../Data";
 
-const GroceryList = ({ addItem, favoriteItem, delItem }) => {
-  const Grocerys = initialData.map((e) => {
+const GroceryList = ({
+  addItem,
+  favoriteItem,
+  delItem,
+  AddGroceryItem,
+  Ref,
+  listData,
+}) => {
+  const Grocerys = listData.map((e) => {
+    const className = e.favorite ? "favorited" : "button";
+
     return (
       <div>
         <br />
@@ -17,13 +25,8 @@ const GroceryList = ({ addItem, favoriteItem, delItem }) => {
           />{" "}
         </i>
         &nbsp; &nbsp;
-        <i onClick={() => favoriteItem(e.id)}>
-          <img
-            width="20"
-            height="20"
-            alt="fav"
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQV0Eti8SMnrcKV61loTeI_Ua6LmmtIustYNRNCF-H9P7gsv9b_&usqp=CAU"
-          />
+        <i className={className} onClick={() => favoriteItem(e.id)}>
+          Fav
         </i>
         &emsp;
         <i onClick={() => delItem(e.id)}>
@@ -40,6 +43,10 @@ const GroceryList = ({ addItem, favoriteItem, delItem }) => {
   return (
     <div className="boarder">
       <h2 style={{ color: "brown" }}>Grocerys</h2>
+
+      <h4>Add Grocerys</h4>
+      <input type={"text"} ref={Ref} />
+      <button onClick={() => AddGroceryItem()}>submit</button>
 
       {Grocerys}
       <br />
