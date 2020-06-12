@@ -8,7 +8,6 @@ const ShoppingList = ({
   favoriteItem,
   additem,
 }) => {
-  const sike = "hello";
   const selectedItems = shopping.map((e) => {
     const className = e.favorite ? "favorited" : "button";
     //will only allow add if selected is true
@@ -64,6 +63,7 @@ const ShoppingList = ({
       );
     }
   });
+  console.log(shopping.false);
 
   return <div>{selectedItems}</div>;
 };

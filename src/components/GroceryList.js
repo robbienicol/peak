@@ -58,7 +58,13 @@ const GroceryList = ({
 
       <h3 style={{ color: "grey" }}>Add Item !</h3>
       <div class="col-3 input-effect">
-        <input class="effect-16" type={"text"} ref={Ref1} placeholder="" />
+        <input
+          maxlength="17"
+          class="effect-16"
+          type={"text"}
+          ref={Ref1}
+          placeholder=""
+        />
         <label>Item</label>
         <span class="focus-border"></span>
       </div>
