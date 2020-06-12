@@ -20,7 +20,7 @@
   position: relative;
   font-size: 12px;
   background-color: rgba(199, 193, 193, 0.726);
-  color: rgb(56, 75, 247);
+  color: rgb(0, 0, 0);
   border-color: rgb(175, 175, 175);
   border-radius: 20%;
   width: 35px;
@@ -28,11 +28,10 @@
 }
 .boarder {
   left: -250px;
-
   float: left;
   position: relative;
   border-style: solid;
-  border-color: red;
+  border-color: rgb(92, 92, 92);
   width: 20%;
 }
 .shopping {
@@ -40,11 +39,31 @@
 
   position: relative;
   border-style: solid;
-  border-color: greenyellow;
+  border-color: rgb(124, 124, 124);
 
   top: 10;
   left: 600px;
   width: 20%;
+}
+.input {
+  position: relative;
+  outline: 1;
+  border: 1;
+  box-shadow: 0 1px 0 0 #852f2f;
+  transition: box-shadow 150ms ease-out;
+}
+.label {
+  position: absolute;
+  left: 0;
+  top: 10px;
+  color: #999;
+  background-color: #fff;
+  z-index: 10;
+  transition: transform 150ms ease-out, font-size 150ms ease-out;
+}
+.names {
+  left: "1000px";
+  float: "left";
 }
 .favorited {
   display: inline-block;
@@ -64,7 +83,7 @@
 .line {
   position: relative;
   top: 9px;
-  border-color: yellow;
+  border-color: rgb(160, 160, 160);
 }
 .App-header {
   background-color: #282c34;
@@ -84,4 +103,72 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+input[type="text"] {
+  font: 15px/24px "Lato", sans-serif;
+  color: #333;
+  width: 100%;
+  box-sizing: border-box;
+  letter-spacing: 1px;
+}
+.effect-16,
+.effect-17,
+.effect-18 {
+  border: 0;
+  padding: 4px 0;
+  border-bottom: 1px solid #ccc;
+  background-color: transparent;
+}
+.effect-16 ~ label {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  top: 9px;
+  color: #aaa;
+  transition: 0.3s;
+  z-index: -1;
+  letter-spacing: 0.5px;
+}
+.effect-16 ~ .focus-border {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #3399ff;
+  transition: 0.4s;
+}
+.effect-16:focus ~ .focus-border,
+.has-content.effect-16 ~ .focus-border {
+  width: 100%;
+  transition: 0.4s;
+}
+.effect-16 ~ .focus-border {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #3399ff;
+  transition: 0.4s;
+}
+input:focus {
+  outline: 0;
+}
+.effect-16:focus ~ label,
+.has-content.effect-16 ~ label {
+  top: -16px;
+  font-size: 12px;
+  color: #3399ff;
+  transition: 0.3s;
+}
+.input-box {
+  padding: 50px 0px;
+}
+.col-3 {
+  /* float: left; */
+  /* width: 27.33%; */
+  margin: 20px 3%;
+  position: relative;
 }

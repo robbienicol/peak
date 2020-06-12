@@ -1,13 +1,15 @@
 import React from "react";
 
 const ShoppingList = ({
-  listData,
+  shopping,
   delItem,
   incrementCart,
   decrementCart,
   favoriteItem,
+  additem,
 }) => {
-  const selectedItems = listData.map((e) => {
+  const sike = "hello";
+  const selectedItems = shopping.map((e) => {
     const className = e.favorite ? "favorited" : "button";
     //will only allow add if selected is true
     if (e.selected === true) {
@@ -15,7 +17,7 @@ const ShoppingList = ({
         <div>
           <hr className="line" />
           <br />
-          <i onClick={() => delItem(e.id)}>
+          <i style={{ cursor: "pointer" }} onClick={() => delItem(e.id)}>
             <img
               width="20"
               height="20"
@@ -24,7 +26,7 @@ const ShoppingList = ({
             />
           </i>
           &emsp;
-          <i key={e.id} onClick={() => incrementCart(e.id)}>
+          <i style={{ cursor: "pointer" }} onClick={() => incrementCart(e.id)}>
             <img
               width="20"
               height="20"
@@ -35,7 +37,7 @@ const ShoppingList = ({
           &emsp;
           {e.quantity}
           &emsp;
-          <i onClick={() => decrementCart(e.id)}>
+          <i style={{ cursor: "pointer" }} onClick={() => decrementCart(e.id)}>
             <img
               className="imageFlip"
               width="20"
@@ -45,7 +47,11 @@ const ShoppingList = ({
             />
           </i>
           &emsp;
-          <i className={className} onClick={() => favoriteItem(e.id)}>
+          <i
+            style={{ cursor: "pointer" }}
+            className={className}
+            onClick={() => favoriteItem(e.id)}
+          >
             Fav
           </i>
           <h4> {e.name}</h4>
@@ -58,6 +64,7 @@ const ShoppingList = ({
       );
     }
   });
+
   return <div>{selectedItems}</div>;
 };
 
