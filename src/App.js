@@ -5,19 +5,19 @@ import GroceryList from "../src/components/GroceryList";
 import ShoppingList from "./components/ShoppingList";
 
 function App() {
-  const [listData, setListData] = useState(initialData);
+  const [grocery, setGrocery] = useState(initialData);
   const [shopping, setShopping] = useState(initialData);
-  const Ref1 = useRef();
-  const Ref3 = useRef();
+  const NameRef = useRef();
+  const SugarRef = useRef();
 
-  // flips selected boolean to true on plus-icon button click
+  // flips selected boolean in grocery to true on the trash-can button click
   function delItemInitial(id) {
-    const updateItems = listData.map((item) =>
+    const updateItems = grocery.map((item) =>
       item.id === id ? { ...item, selected: true } : item
     );
-    setListData(updateItems);
+    setGrocery(updateItems);
   }
-  // flips selected boolean on Shopping List to false on the plus button click
+  // flips selected boolean on Shopping List to true on the plus button click
 
   function additem(id) {
     const updateItems = shopping.map((item) =>
@@ -26,7 +26,7 @@ function App() {
     setShopping(updateItems);
   }
 
-  // flips selected boolean to false on both trash-icon button click
+  // converts the selected boolean in shopping to false on trash-icon button click
   function delItem(id) {
     const delItems = shopping.map((item) =>
       item.id === id ? { ...item, selected: false } : item
@@ -38,11 +38,11 @@ function App() {
     const up = shopping.map((hi) =>
       hi.id === id ? { ...hi, favorite: !hi.favorite } : hi
     );
-    const updateFavorite = listData.map((fav) =>
+    const updateFavorite = grocery.map((fav) =>
       fav.id === id ? { ...fav, favorite: !fav.favorite } : fav
     );
 
-    setListData(updateFavorite);
+    setGrocery(updateFavorite);
     setShopping(up);
   }
   //increments quantity + 1 on up-arrow click
@@ -65,13 +65,13 @@ function App() {
 
   // gives ability to add new Grocery Item, by adding a New Object to the array.
   function AddGroceryItem(id) {
-    const addName = Ref1.current.value;
-    const addSugar = Ref3.current.value;
+    const addName = NameRef.current.value;
+    const addSugar = SugarRef.current.value;
 
-    setListData([
-      ...listData,
+    setGrocery([
+      ...grocery,
       {
-        id: listData.length + 1,
+        id: grocery.length + 1,
         name: addName,
         favorite: false,
         quantity: 0,
@@ -86,7 +86,7 @@ function App() {
     setShopping([
       ...shopping,
       {
-        id: listData.length + 1,
+        id: grocery.length + 1,
         name: addName,
         favorite: false,
         quantity: 0,
@@ -99,15 +99,16 @@ function App() {
       },
     ]);
   }
+  // gives ability to add new Shopping Item & grocery Item, by adding a New Object to the array.
 
   function alsoAddGroceryItem(id) {
-    const addName = Ref1.current.value;
-    const addSugar = Ref3.current.value;
+    const addName = NameRef.current.value;
+    const addSugar = SugarRef.current.value;
 
-    setListData([
-      ...listData,
+    setGrocery([
+      ...grocery,
       {
-        id: listData.length + 1,
+        id: grocery.length + 1,
         name: addName,
         favorite: false,
         quantity: 0,
@@ -122,7 +123,7 @@ function App() {
     setShopping([
       ...shopping,
       {
-        id: listData.length + 1,
+        id: grocery.length + 1,
         name: addName,
         favorite: false,
         quantity: 0,
@@ -152,12 +153,12 @@ function App() {
       </div>
       <GroceryList
         additem={additem}
-        listData={listData}
+        grocery={grocery}
         delItemInitial={delItemInitial}
         favoriteItem={favoriteItem}
         AddGroceryItem={AddGroceryItem}
-        Ref1={Ref1}
-        Ref3={Ref3}
+        NameRef={NameRef}
+        SugarRef={SugarRef}
         alsoAddGroceryItem={alsoAddGroceryItem}
       />
     </div>

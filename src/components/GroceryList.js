@@ -4,13 +4,13 @@ const GroceryList = ({
   delItemInitial,
   favoriteItem,
   AddGroceryItem,
-  Ref1,
-  Ref3,
-  listData,
+  NameRef,
+  SugarRef,
+  grocery,
   additem,
   alsoAddGroceryItem,
 }) => {
-  const Grocerys = listData.map((e) => {
+  const Grocerys = grocery.map((e) => {
     const className = e.favorite ? "favorited" : "button";
     if (e.selected === false) {
       return (
@@ -63,7 +63,7 @@ const GroceryList = ({
           maxlength="17"
           class="effect-16"
           type={"text"}
-          ref={Ref1}
+          ref={NameRef}
           placeholder=""
         />
         <label>Item</label>
@@ -71,7 +71,7 @@ const GroceryList = ({
       </div>
 
       <div class="col-3 input-effect">
-        <input class="effect-16" type={"text"} ref={Ref3} placeholder="" />
+        <input class="effect-16" type={"text"} ref={SugarRef} placeholder="" />
         <label>Sugar</label>
         <span class="focus-border"></span>
       </div>
