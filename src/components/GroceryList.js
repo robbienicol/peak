@@ -8,6 +8,7 @@ const GroceryList = ({
   Ref3,
   listData,
   additem,
+  alsoAddGroceryItem,
 }) => {
   const Grocerys = listData.map((e) => {
     const className = e.favorite ? "favorited" : "button";
@@ -76,7 +77,13 @@ const GroceryList = ({
       </div>
 
       <button style={{ cursor: "pointer" }} onClick={() => AddGroceryItem()}>
-        Add Item
+        Add Grocery
+      </button>
+      <button
+        style={{ cursor: "pointer" }}
+        onClick={() => alsoAddGroceryItem()}
+      >
+        Add shopping
       </button>
 
       {Grocerys}

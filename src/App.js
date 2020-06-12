@@ -100,6 +100,42 @@ function App() {
     ]);
   }
 
+  function alsoAddGroceryItem(id) {
+    const addName = Ref1.current.value;
+    const addSugar = Ref3.current.value;
+
+    setListData([
+      ...listData,
+      {
+        id: listData.length + 1,
+        name: addName,
+        favorite: false,
+        quantity: 0,
+        nutrition: [
+          {
+            sugars: addSugar,
+          },
+        ],
+        selected: false,
+      },
+    ]);
+    setShopping([
+      ...shopping,
+      {
+        id: listData.length + 1,
+        name: addName,
+        favorite: false,
+        quantity: 0,
+        nutrition: [
+          {
+            sugars: addSugar,
+          },
+        ],
+        selected: true,
+      },
+    ]);
+  }
+
   return (
     <div className="App">
       <h1>Grocery & Shopping List</h1>
@@ -122,6 +158,7 @@ function App() {
         AddGroceryItem={AddGroceryItem}
         Ref1={Ref1}
         Ref3={Ref3}
+        alsoAddGroceryItem={alsoAddGroceryItem}
       />
     </div>
   );
