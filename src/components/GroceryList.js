@@ -58,22 +58,27 @@ const GroceryList = ({
       <h1 style={{ color: "brown" }}>Grocery List</h1>
 
       <h3 style={{ color: "grey" }}>Add Item !</h3>
-      <div class="col-3 input-effect">
+      <div className="col-3 input-effect">
         <input
-          maxlength="17"
-          class="effect-16"
+          maxLength="17"
+          className="effect-16"
           type={"text"}
           ref={NameRef}
           placeholder=""
         />
         <label>Item</label>
-        <span class="focus-border"></span>
+        <span className="focus-border"></span>
       </div>
 
-      <div class="col-3 input-effect">
-        <input class="effect-16" type={"text"} ref={SugarRef} placeholder="" />
+      <div className="col-3 input-effect">
+        <input
+          className="effect-16"
+          type={"text"}
+          ref={SugarRef}
+          placeholder=""
+        />
         <label>Sugar</label>
-        <span class="focus-border"></span>
+        <span className="focus-border"></span>
       </div>
 
       <button style={{ cursor: "pointer" }} onClick={() => AddGroceryItem()}>

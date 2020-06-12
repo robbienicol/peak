@@ -33,7 +33,7 @@ function App() {
     );
     setShopping(delItems);
   }
-  //flips favorite boolean to not favorite on heart-icon & fav-icon click
+  //flips favorite boolean to not favorite on both states when clicking the fav-icon
   function favoriteItem(id) {
     const up = shopping.map((hi) =>
       hi.id === id ? { ...hi, favorite: !hi.favorite } : hi
