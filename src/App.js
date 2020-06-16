@@ -67,7 +67,7 @@ function App() {
   function AddGroceryItem(id) {
     const addName = NameRef.current.value;
     const addSugar = SugarRef.current.value;
-
+    console.log(grocery.name);
     setGrocery([
       ...grocery,
       {

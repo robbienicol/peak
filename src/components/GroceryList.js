@@ -12,7 +12,7 @@ const GroceryList = ({
 }) => {
   const Grocerys = grocery.map((e) => {
     const className = e.favorite ? "favorited" : "button";
-    if (e.selected === false) {
+    if (e.selected === false && e.name.length >= 1) {
       return (
         <div>
           <br />

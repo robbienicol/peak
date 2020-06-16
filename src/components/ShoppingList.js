@@ -1,17 +1,17 @@
 import React from "react";
 
 const ShoppingList = ({
+  additem,
   shopping,
   delItem,
   incrementCart,
   decrementCart,
   favoriteItem,
-  additem,
 }) => {
   const selectedItems = shopping.map((e) => {
     const className = e.favorite ? "favorited" : "button";
     //will only allow add if selected is true
-    if (e.selected === true) {
+    if (e.selected === true && e.name.length >= 1) {
       return (
         <div>
           <hr className="line" />
